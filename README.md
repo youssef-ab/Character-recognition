@@ -29,9 +29,9 @@ Comme la première méthode, on effectue le même traitement pour isoler chaque 
 
 - Mesure du pourcentage des caractères reconnus par rapport à tous les caractères dans l'image d'entrée. Pour cela on vérifie l'existence de chaque caractère détecte par **Pytesseract** dans le mot et aussi son indice. Ceci garantit que le caractère reconnu correspond à celui existant dans le mot dont l'indice est celui de son contour (sur l'axe x). On peut ne pas prendre en considération l'indice du caractère (parfois, on détecte plus de contours) et vérifier juste l'existence s'il n'y a pas des caractères répétés dans le même mot. Ceci augmente la précision, car la vérification de l'ordre élimine parfois des caractères bien reconnus, mais mal indexés à cause des problèmes de détection de contour expliqués précédemment.
 - La deuxième métrique consiste à calculer une matrice de confusion pour chaque mot reconnu : on compare le mot qui existe dans la liste des labels et le mot composé par les caractères détectés. Ceci nous donne une matrice contenant des 0 et 1. La norme de différence entre cette matrice et la matrice identité qui correspond à une vraie détection de tout le mot nous donne une vue générale sur l'erreur de détection. En effet, si cette norme est proche de 0 on a une bonne précision, par contre s'il dépasse 1 on a une mauvaise précision.
-$$
+\begin{equation}
 N = \frac{\mid \mid cf\_mat - Id \mid\mid\ }{\mid \mid Id \mid\mid\ }
-$$
+\end{equation}
 
 ### Avantages et limitations
 Généralement, cette méthode est plus précise que la première. Cependant, elle a des limitations qui causent des fausses détections :  
