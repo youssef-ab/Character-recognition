@@ -29,7 +29,7 @@ Comme la première méthode, on effectue le même traitement pour isoler chaque 
 
 - Mesure du pourcentage des caractères reconnus par rapport à tous les caractères dans l'image d'entrée. Pour cela on vérifie l'existence de chaque caractère détecte par **Pytesseract** dans le mot et aussi son indice. Ceci garantit que le caractère reconnu correspond à celui existant dans le mot dont l'indice est celui de son contour (sur l'axe x). On peut ne pas prendre en considération l'indice du caractère (parfois, on détecte plus de contours) et vérifier juste l'existence s'il n'y a pas des caractères répétés dans le même mot. Ceci augmente la précision, car la vérification de l'ordre élimine parfois des caractères bien reconnus, mais mal indexés à cause des problèmes de détection de contour expliqués précédemment.
 - La deuxième métrique consiste à calculer une matrice de confusion pour chaque mot reconnu : on compare le mot qui existe dans la liste des labels et le mot composé par les caractères détectés. Ceci nous donne une matrice contenant des 0 et 1. La norme de différence entre cette matrice et la matrice identité qui correspond à une vraie détection de tout le mot nous donne une vue générale sur l'erreur de détection. En effet, si cette norme est proche de 0 on a une bonne précision, par contre s'il dépasse 1 on a une mauvaise précision.
-![First equation](https://latex.codecogs.com/gif.latex?N%20%3D%20%5Cfrac%7B%5Cmid%20%5Cmid%20cf%5C_mat%20-%20Id%20%5Cmid%5Cmid%5C%20%7D%7B%5Cmid%20%5Cmid%20Id%20%5Cmid%5Cmid%5C%20%7D)
+Score calculé pour chaque mot : ![First equation](https://latex.codecogs.com/gif.latex?N%20%3D%20%5Cfrac%7B%5Cmid%20%5Cmid%20cf%5C_mat%20-%20Id%20%5Cmid%5Cmid%5C%20%7D%7B%5Cmid%20%5Cmid%20Id%20%5Cmid%5Cmid%5C%20%7D)
 
 ### Avantages et limitations
 Généralement, cette méthode est plus précise que la première. Cependant, elle a des limitations qui causent des fausses détections :  
@@ -38,7 +38,7 @@ Généralement, cette méthode est plus précise que la première. Cependant, el
 - Erreurs dues au traitement de l'image comme dans la première méthode.
 - Temps d'exécution supérieur à celui de la première méthode à cause de l'utilisation de la bibliothèque **Pytesseract**.
 
-**Remarque** : dans les deux méthodes, on filtre les contours d'une surface inférieure à $25 pixel^2$ pour éviter des fausses détections (ex. les points des lettres i et j).
+**Remarque** : dans les deux méthodes, on filtre les contours d'une surface inférieure à ![](https://latex.codecogs.com/gif.latex?25%20pixel%5E2) pour éviter des fausses détections (ex. les points des lettres i et j).
 # Exécution
 Pour exécuter, vous aurez besoin d'installer les deux bibliothèques **Pytesseract** et **OpenCV**. Après l'exécution, vous aurez l'option de choisir entre le test de l'algorithme sur une image ou d'exécuter une des deux méthodes. Dans ce dernier choix, vous aurez en sortie un dictionnaire contenant les annotations des caractères de chaque image :
 
