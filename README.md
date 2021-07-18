@@ -1,4 +1,4 @@
-# Affinement des labels
+# Coding assignment - Label refinement
 ## Problématique
 On a une dataset d'images chacune contient des mots localisés et annotés. L'objectif est de développer un algorithme permettant la reconnaissance des caractères de chaque mot et l'extraction de leurs localisations i.e. créer un jeu de données OCR au niveau des symboles à partir d'un jeu de données OCR au niveau des mots. Ceci va nous aider à économiser les ressources financières et humaines nécessaires pour ce travail.
 
