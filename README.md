@@ -39,6 +39,7 @@ Généralement, cette méthode est plus précise que la première. Cependant, el
 - Erreurs dues à l'algorithme de **Pytesseract**, par exemple 'b' peut être confondu avec 6.  
 - Erreurs dues au traitement de l'image comme dans la première méthode.
 - Temps d'exécution supérieur à celui de la première méthode à cause de l'utilisation de la bibliothèque **Pytesseract**.
+
 **Remarque** : dans les deux méthodes, on filtre les contours d'une surface inférieure à $25 pixel^2$ pour éviter des fausses détections (ex. les points des lettres i et j).
 # Exécution
 Pour exécuter, vous aurez besoin d'installer les deux bibliothèques **Pytesseract** et **OpenCV**. Après l'exécution, vous aurez l'option de choisir entre le test de l'algorithme sur une image ou d'exécuter une des deux méthodes. Dans ce dernier choix, vous aurez en sortie un dictionnaire contenant les annotations des caractères de chaque image :
