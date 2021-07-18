@@ -32,7 +32,7 @@ Comme la première méthode, on effectue le même traitement pour isoler chaque 
 
 Score calculé pour chaque mot :          
 <p align="center">
-  <img width="460" height="300" src="https://latex.codecogs.com/gif.latex?N%20%3D%20%5Cfrac%7B%5Cmid%20%5Cmid%20cf%5C_mat%20-%20Id%20%5Cmid%5Cmid%5C%20%7D%7B%5Cmid%20%5Cmid%20Id%20%5Cmid%5Cmid%5C%20%7D">
+  <img width="100" height="100" src="https://latex.codecogs.com/gif.latex?N%20%3D%20%5Cfrac%7B%5Cmid%20%5Cmid%20cf%5C_mat%20-%20Id%20%5Cmid%5Cmid%5C%20%7D%7B%5Cmid%20%5Cmid%20Id%20%5Cmid%5Cmid%5C%20%7D">
 </p>
 
 ### Avantages et limitations
